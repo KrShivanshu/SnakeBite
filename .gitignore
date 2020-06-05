@@ -1,0 +1,8 @@
+Debug
+snake/Debug
+snake/include
+snake/lib
+snake/snake.vcxproj
+snake/snake.vcxproj.filters
+snake/snake.vcxproj.user
+.vs 
