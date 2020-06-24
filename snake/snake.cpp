@@ -42,6 +42,8 @@ void Snake::Grow(const Vector2f & direction)
 	Sprite newPiece;
 	newPiece.setTexture(*(s_body.begin()->getTexture()));
 	newPiece.setPosition(s_head->getPosition() + direction);
+
+	s_head = s_body.insert(++s_head, newPiece);
 }
 
 bool Snake::IsSelfIntersecting() const
