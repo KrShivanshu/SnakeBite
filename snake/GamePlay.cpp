@@ -113,10 +113,10 @@ void GamePlay::Update(Time deltaTime)
 				int x = 0, y = 0;
 				std::random_device rd; // obtain a random number from hardware
 				std::mt19937 gen(rd()); // seed the generator
-				std::uniform_int_distribution<> distr(16, content_s->window_s->getSize().x - 2 * 16);
+				std::uniform_int_distribution<> distr(1, 38);
 				x = distr(gen);
 				y = distr(gen);
-				food.setPosition(x, y);
+				food.setPosition(x*16, y*16);
 				score += 1;
 				scoreText.setString("Score :" + to_string(score));
 			}
