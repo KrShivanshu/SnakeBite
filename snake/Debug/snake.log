@@ -1,2 +1,17 @@
-﻿  snake.cpp
-  snake.vcxproj -> C:\temp2\snake\Debug\snake.exe
+﻿  GameOver.cpp
+c:\projects\snake\snake\gameover.cpp(19): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+c:\projects\snake\snake\gameover.cpp(26): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+c:\projects\snake\snake\gameover.cpp(33): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  snake.vcxproj -> C:\projects\snake\Debug\snake.exe

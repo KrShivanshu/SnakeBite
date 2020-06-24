@@ -154,7 +154,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="snake.cpp" />
+    <ClCompile Include="AssetMan.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="GamePause.cpp" />
+    <ClCompile Include="GamePlay.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="StateMan.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AssetMan.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameOver.h" />
+    <ClInclude Include="GamePause.h" />
+    <ClInclude Include="GamePlay.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Snake.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StateMan.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

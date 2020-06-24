@@ -1,44 +1,71 @@
-#include <SFML/Audio.hpp>
-#include <SFML/Graphics.hpp>
-int main()
+#include "Snake.h"
+
+Snake::Snake():s_body(list<Sprite>(4))
 {
-	// Create the main window
-	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
-	// Load a sprite to display
-	sf::Texture texture;
-	if (!texture.loadFromFile("cute.ico"))
-		return EXIT_FAILURE;
-	sf::Sprite sprite(texture);
-	// Create a graphical text to display
-	//sf::Font font;
-	//if (!font.loadFromFile("arial.ttf"))
-		//return EXIT_FAILURE;
-	//sf::Text text("Hello SFML", font, 50);
-	// Load a music to play
-	//sf::Music music;
-	//if (!music.openFromFile("nice_music.ogg"))
-		//return EXIT_FAILURE;
-	// Play the music
-	//music.play();
-	// Start the game loop
-	while (window.isOpen())
+	s_head = --s_body.end();
+	s_tail = s_body.begin();
+}
+
+Snake::~Snake()
+{
+}
+
+void Snake::Init(const Texture & texture)
+{
+	float x = 16.f;
+	for (auto &piece : s_body)
 	{
-		// Process events
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			// Close window: exit
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
-		// Clear screen
-		window.clear();
-		// Draw the sprite
-		window.draw(sprite);
-		// Draw the string
-		//window.draw(text);
-		// Update the window
-		window.display();
+		piece.setTexture(texture);
+		piece.setPosition({ x,16.f });
+		x += 16.f;
 	}
-	return EXIT_SUCCESS;
+}
+
+void Snake::Move(const Vector2f & direction)
+{
+	s_tail->setPosition(s_head->getPosition() + direction);
+	s_head = s_tail;
+	++s_tail;
+	if (s_tail == s_body.end())
+	{
+		s_tail = s_body.begin();
+	}
+}
+
+bool Snake::IsOn(const Sprite & other) const
+{
+	return other.getGlobalBounds().intersects(s_head->getGlobalBounds());
+}
+
+void Snake::Grow(const Vector2f & direction)
+{
+	Sprite newPiece;
+	newPiece.setTexture(*(s_body.begin()->getTexture()));
+	newPiece.setPosition(s_head->getPosition() + direction);
+}
+
+bool Snake::IsSelfIntersecting() const
+{
+	bool flag = false;
+	for (auto piece = s_body.begin(); piece != s_body.end(); ++piece)
+	{
+		if (s_head != piece)
+		{
+			flag = IsOn(*piece);
+			if (flag)
+			{
+				break;
+			}
+		}
+	}
+	return flag;
+}
+
+void Snake::draw(RenderTarget & target, RenderStates  states) const
+{
+	for (auto &piece : s_body)
+	{
+		target.draw(piece);
+
+	}
 }
