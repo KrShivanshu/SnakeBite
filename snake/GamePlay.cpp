@@ -10,7 +10,7 @@
 #include <iomanip>
 #include <random>
 
-GamePlay::GamePlay(shared_ptr<Content>& content):content_s(content),score(0),snakeDirection({16.f,0.f}),elapsedTime(Time::Zero),isPaused(false)
+GamePlay::GamePlay(shared_ptr<Content>& content):content_s(content),score(0),snakeDirection({32.f,0.f}),elapsedTime(Time::Zero),isPaused(false)
 {
 	srand(time(nullptr));
 }
@@ -21,10 +21,10 @@ GamePlay::~GamePlay()
 
 void GamePlay::Init()
 {
-	content_s->assets_s->AddTexture(GRASS, "assets/textures/grass.png");
+	content_s->assets_s->AddTexture(GRASS, "assets/textures/grass.png",true);
 	content_s->assets_s->AddTexture(SNAKE, "assets/textures/snake.png");
 	content_s->assets_s->AddTexture(FOOD, "assets/textures/food.png");
-	content_s->assets_s->AddTexture(WALL, "assets/textures/wall.png");
+	content_s->assets_s->AddTexture(WALL, "assets/textures/wall.png",true);
 
 	grass.setTexture(content_s->assets_s->GetTexture(GRASS));
 	grass.setTextureRect(content_s->window_s->getViewport(content_s->window_s->getDefaultView()));
@@ -33,18 +33,18 @@ void GamePlay::Init()
 	{
 		wall.setTexture(content_s->assets_s->GetTexture(WALL));
 	}
-	walls[0].setTextureRect({ 0, 0, (int)content_s->window_s->getSize().x, 16 });
+	walls[0].setTextureRect({ 0, 0, (int)content_s->window_s->getSize().x, 32 });
 
-	walls[1].setTextureRect({ 0, 0, (int)content_s->window_s->getSize().x, 16 });
-	walls[1].setPosition(0, content_s->window_s->getSize().y - 16);
+	walls[1].setTextureRect({ 0, 0, (int)content_s->window_s->getSize().x, 32 });
+	walls[1].setPosition(0, content_s->window_s->getSize().y - 32);
 
-	walls[2].setTextureRect({ 0, 0,16, (int)content_s->window_s->getSize().x });
+	walls[2].setTextureRect({ 0, 0,32, (int)content_s->window_s->getSize().y });
 
-	walls[3].setTextureRect({ 0, 0,16, (int)content_s->window_s->getSize().x });
-	walls[3].setPosition(content_s->window_s->getSize().x - 16, 0);
+	walls[3].setTextureRect({ 0, 0,32, (int)content_s->window_s->getSize().y });
+	walls[3].setPosition(content_s->window_s->getSize().x - 32, 0);
 
 	food.setTexture(content_s->assets_s->GetTexture(FOOD));
-	food.setPosition(content_s->window_s->getSize().x / 2, content_s->window_s->getSize().y / 2);
+	food.setPosition(5*32.f,9*32.f);
 
 	snake.Init(content_s->assets_s->GetTexture(SNAKE));
 
@@ -68,16 +68,16 @@ void GamePlay::ProcessInput()
 			switch (event.key.code)
 			{
 			case Keyboard::Up:
-				newDirection = { 0.f,-16.f };
+				newDirection = { 0.f,-32.f };
 				break;
 			case Keyboard::Down:
-				newDirection = { 0.f,16.f };
+				newDirection = { 0.f,32.f };
 				break;
 			case Keyboard::Left:
-				newDirection = { -16.f,0.f };
+				newDirection = { -32.f,0.f };
 				break;
 			case Keyboard::Right:
-				newDirection = { 16.f,0.f };
+				newDirection = { 32.f,0.f };
 				break;
 			case Keyboard::Space:
 				content_s->states_s->Add(make_unique<GamePause>(content_s));
@@ -113,10 +113,11 @@ void GamePlay::Update(Time deltaTime)
 				int x = 0, y = 0;
 				std::random_device rd; // obtain a random number from hardware
 				std::mt19937 gen(rd()); // seed the generator
-				std::uniform_int_distribution<> distr(1, 38);
-				x = distr(gen);
-				y = distr(gen);
-				food.setPosition(x*16, y*16);
+				std::uniform_int_distribution<> distrx(1, 13);
+				std::uniform_int_distribution<> distry(1, 18);
+				x = distrx(gen);
+				y = distry(gen);
+				food.setPosition(x*32, y*32);
 				score += 1;
 				scoreText.setString("Score :" + to_string(score));
 			}

@@ -8,7 +8,7 @@ using namespace sf;
 
 Game::Game():context_s(make_shared<Content>())
 {
-	context_s->window_s->create(VideoMode(640, 640), "Snake Bite", Style::Close);
+	context_s->window_s->create(VideoMode(480, 640), "Snake Bite", Style::Close);
 	context_s->states_s->Add(make_unique<MainMenu>(context_s));
 }
 

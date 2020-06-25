@@ -10,10 +10,5 @@ c:\projects\snake\snake\gameplay.cpp(44): warning C4244: 'argument': conversion 
           [
               T=unsigned int
           ]
-c:\projects\snake\snake\gameplay.cpp(47): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-c:\projects\snake\snake\gameplay.cpp(119): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\projects\snake\snake\gameplay.cpp(120): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   snake.vcxproj -> C:\projects\snake\Debug\snake.exe
