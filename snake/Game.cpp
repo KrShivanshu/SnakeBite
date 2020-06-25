@@ -18,10 +18,7 @@ Game::~Game()
 
 void Game::Run()
 {
-	sf::Texture texture;
-	texture.loadFromFile("food.png");
-		
-	sf::Sprite sprite(texture);
+	
 	Clock clock;
 	Time timesincelastframe = Time::Zero;
 	while (context_s->window_s->isOpen())

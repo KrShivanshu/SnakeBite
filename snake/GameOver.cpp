@@ -17,21 +17,21 @@ void GameOver::Init()
 	gameOverTitle_s.setString("Game Over");
 	gameOverTitle_s.setOrigin(gameOverTitle_s.getLocalBounds().width / 2, gameOverTitle_s.getLocalBounds().height / 2);
 	gameOverTitle_s.setPosition(content_s->window_s->getSize().x / 2, content_s->window_s->getSize().x / 2 - 150.f);
-	gameOverTitle_s.setCharacterSize(30);
+	gameOverTitle_s.setCharacterSize(35);
 
 	content_s->assets_s->AddFont(SECOND_FONT, "assets/waltographUI.ttf");
 	retryButton_s.setFont(content_s->assets_s->GetFont(SECOND_FONT));
 	retryButton_s.setString("Retry");
 	retryButton_s.setOrigin(retryButton_s.getLocalBounds().width / 2, retryButton_s.getLocalBounds().height / 2);
-	retryButton_s.setPosition(content_s->window_s->getSize().x / 2, content_s->window_s->getSize().x / 2);
-	retryButton_s.setCharacterSize(23);
+	retryButton_s.setPosition(content_s->window_s->getSize().x / 2, content_s->window_s->getSize().x / 2 + 20.f);
+	retryButton_s.setCharacterSize(27);
 
 	//content_s->assets_s->AddFont(SECOND_FONT, "assets/waltographUI.ttf");
 	exitButton_s.setFont(content_s->assets_s->GetFont(SECOND_FONT));
-	exitButton_s.setString("Spare");
+	exitButton_s.setString("Exit");
 	exitButton_s.setOrigin(exitButton_s.getLocalBounds().width / 2, exitButton_s.getLocalBounds().height / 2);
-	exitButton_s.setPosition(content_s->window_s->getSize().x / 2, content_s->window_s->getSize().x / 2 + 50.f);
-	exitButton_s.setCharacterSize(20);
+	exitButton_s.setPosition(content_s->window_s->getSize().x / 2, content_s->window_s->getSize().x / 2 + 80.f);
+	exitButton_s.setCharacterSize(27);
 }
 
 void GameOver::ProcessInput()

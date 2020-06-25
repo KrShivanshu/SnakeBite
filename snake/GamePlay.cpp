@@ -49,8 +49,10 @@ void GamePlay::Init()
 	snake.Init(content_s->assets_s->GetTexture(SNAKE));
 
 	scoreText.setFont(content_s->assets_s->GetFont(MAIN_FONT));
-	scoreText.setString("Score:" + to_string(score));
-	scoreText.setCharacterSize(15);
+	scoreText.setString("Score: " + to_string(score));
+	scoreText.setOrigin(scoreText.getLocalBounds().width / 2, scoreText.getLocalBounds().height / 2);
+	scoreText.setPosition(content_s->window_s->getSize().x / 2, 16.f);
+	scoreText.setCharacterSize(20);
 }
 
 void GamePlay::ProcessInput()
@@ -80,7 +82,7 @@ void GamePlay::ProcessInput()
 				newDirection = { 32.f,0.f };
 				break;
 			case Keyboard::Space:
-				content_s->states_s->Add(make_unique<GamePause>(content_s));
+				content_s->states_s->Add(make_unique<GamePause>(content_s/*,score*/));
 				break;
 			default:
 				break;
@@ -119,7 +121,7 @@ void GamePlay::Update(Time deltaTime)
 				y = distry(gen);
 				food.setPosition(x*32, y*32);
 				score += 1;
-				scoreText.setString("Score :" + to_string(score));
+				scoreText.setString("Score: " + to_string(score));
 			}
 			else
 			{

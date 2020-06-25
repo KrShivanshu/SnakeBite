@@ -15,8 +15,10 @@ class GamePause :
 private:
 	shared_ptr<Content>content_s;
 	Text pauseTitle_s;
+	//Text scoreText;
+	//int score_s;
 public:
-	GamePause(shared_ptr<Content>&content);
+	GamePause(shared_ptr<Content>&content/*,int score*/);
 	~GamePause();
 
 	void Init() override;
