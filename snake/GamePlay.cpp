@@ -105,7 +105,7 @@ void GamePlay::Update(Time deltaTime)
 			{
 				if (snake.IsOn(wall))
 				{
-					content_s->states_s->Add(make_unique<GameOver>(content_s), true);
+					content_s->states_s->Add(make_unique<GameOver>(content_s,score), true);
 					break;
 				}
 			}
@@ -129,7 +129,7 @@ void GamePlay::Update(Time deltaTime)
 			}
 			if (snake.IsSelfIntersecting())
 			{
-				content_s->states_s->Add(make_unique<GameOver>(content_s), true);
+				content_s->states_s->Add(make_unique<GameOver>(content_s,score), true);
 			}
 			elapsedTime = Time::Zero;
 		}

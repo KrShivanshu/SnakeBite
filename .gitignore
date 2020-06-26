@@ -6,3 +6,16 @@ snake/snake.vcxproj
 snake/snake.vcxproj.filters
 snake/snake.vcxproj.user
 .vs 
+.vs/snake/v15/.suo
+.vs/snake/v15/Browse.VC.db
+Debug/snake.exe
+Debug/snake.ilk
+Debug/snake.pdb
+snake/Debug/snake.log
+snake/Debug/snake.tlog/CL.command.1.tlog
+snake/Debug/snake.tlog/CL.read.1.tlog
+snake/Debug/snake.tlog/CL.write.1.tlog
+snake/Debug/snake.tlog/link.read.1.tlog
+snake/Debug/vc141.idb
+snake/Debug/vc141.pdb
+       

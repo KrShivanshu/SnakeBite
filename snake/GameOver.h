@@ -16,6 +16,8 @@ private:
 	Text gameOverTitle_s;
 	Text retryButton_s;
 	Text exitButton_s;
+	Text scoreText_s;
+	int score_s;
 
 	bool isretryButtonPressed;
 	bool isExitButtonPressed;
@@ -24,7 +26,7 @@ private:
 	bool isExitButtonSelected;
 
 public:
-	GameOver(shared_ptr<Content>& content);
+	GameOver(shared_ptr<Content>& content,int score);
 	~GameOver();
 
 	void Init() override;
