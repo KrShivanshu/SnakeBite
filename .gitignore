@@ -1,4 +1,6 @@
-Debug/
+.dll
+.ilk
+.pdb
 snake/Debug
 snake/include
 snake/lib

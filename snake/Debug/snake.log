@@ -1,22 +1,74 @@
-﻿  GameOver.cpp
-c:\projects\snake\snake\gameover.cpp(19): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+﻿  AssetMan.cpp
+  Game.cpp
+  GameOver.cpp
+D:\Projects\SnakeBite\snake\GameOver.cpp(19,63): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-c:\projects\snake\snake\gameover.cpp(26): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+D:\Projects\SnakeBite\snake\GameOver.cpp(26,61): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-c:\projects\snake\snake\gameover.cpp(33): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+D:\Projects\SnakeBite\snake\GameOver.cpp(33,60): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-c:\projects\snake\snake\gameover.cpp(39): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+D:\Projects\SnakeBite\snake\GameOver.cpp(39,59): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-  snake.vcxproj -> C:\projects\snake\Debug\snake.exe
+  GamePause.cpp
+D:\Projects\SnakeBite\snake\GamePause.cpp(20,98): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\SnakeBite\snake\GamePause.cpp(20,60): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  GamePlay.cpp
+D:\Projects\SnakeBite\snake\GamePlay.cpp(15,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Projects\SnakeBite\snake\GamePlay.cpp(39,59): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\SnakeBite\snake\GamePlay.cpp(44,56): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\SnakeBite\snake\GamePlay.cpp(54,57): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\SnakeBite\snake\GamePlay.cpp(122,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Projects\SnakeBite\snake\GamePlay.cpp(122,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+  MainMenu.cpp
+D:\Projects\SnakeBite\snake\MainMenu.cpp(21,59): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\SnakeBite\snake\MainMenu.cpp(28,60): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\SnakeBite\snake\MainMenu.cpp(35,60): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  Snake.cpp
+  StateMan.cpp
+  Generating Code...
+  snake.vcxproj -> D:\Projects\SnakeBite\Debug\snake.exe
